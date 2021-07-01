@@ -38,6 +38,7 @@ class TableSeeder extends Seeder
 
         for ($i = 0; $i < 100; $i++) {
             Recipe::create([
+                'user_id'=>$faker->numberBetween(1,10),
                 'name'=>$faker->word,
                 'photos'=>$faker->randomDigit,
                 'ingredients'=>$faker->word,
