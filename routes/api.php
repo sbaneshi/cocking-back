@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/recent', function() {
+    return \App\Recipe::all()->sortByDesc('created_at');
 });
+
+//Route::get('/popular', function() {
+//    return \App\Recipe::all()->sortByDesc('created_at');
+//});
